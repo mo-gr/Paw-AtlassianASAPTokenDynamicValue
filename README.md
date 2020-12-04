@@ -1,4 +1,6 @@
-# JsonWebToken extension for Paw
+# Atlassian ASAP Token Dynamic Value extension for Paw
+
+Based on a fork of https://github.com/luckymarmot/Paw-JsonWebTokenDynamicValue
 
 ## Development
 
