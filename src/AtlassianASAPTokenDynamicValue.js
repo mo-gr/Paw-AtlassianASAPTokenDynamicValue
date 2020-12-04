@@ -4,7 +4,7 @@ import jsrsasign from 'jsrsasign';
 class AtlassianASAPTokenDynamicValue {
   static identifier = 'com.atlassian.PawExtensions.AtlassianASAPTokenDynamicValue';
   static title = 'Atlassian ASAP Token (JWT)';
-  static help = 'https://github.com/mo-gr/Paw-JsonWebTokenDynamicValue';
+  static help = 'https://github.com/mo-gr/Paw-AtlassianASAPTokenDynamicValue';
   static inputs = [
     InputField('iss', 'Issuer (iss)', 'String'),
     InputField('sub', 'Subject (sub)', 'String'),
