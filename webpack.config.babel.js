@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 
-const name = 'JsonWebTokenDynamicValue';
+const name = 'AtlassianASAPTokenDynamicValue';
 
 const production = process.env.NODE_ENV === 'production';
 
@@ -9,10 +9,10 @@ const config = {
   target: 'node-webkit',
   entry: [
     'jsrsasign',
-    './src/JsonWebTokenDynamicValue.js'
+    './src/AtlassianASAPTokenDynamicValue.js'
   ],
   output:{
-    path: path.join(__dirname, './build/de.choffmeister.PawExtensions.JsonWebTokenDynamicValue'),
+    path: path.join(__dirname, './build/com.atlassian.PawExtensions.AtlassianASAPTokenDynamicValue'),
     pathinfo: true,
     publicPath: '/build/',
     filename: name + '.js'

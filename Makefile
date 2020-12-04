@@ -1,4 +1,4 @@
-identifier=de.choffmeister.PawExtensions.JsonWebTokenDynamicValue
+identifier=com.atlassian.PawExtensions.AtlassianASAPTokenDynamicValue
 extensions_dir=$(HOME)/Library/Containers/com.luckymarmot.Paw/Data/Library/Application Support/com.luckymarmot.Paw/Extensions/
 
 build:
@@ -17,4 +17,4 @@ test:
 	npm test
 
 archive: build
-	cd ./build/; zip -r JsonWebTokenDynamicValue.zip "$(identifier)/"
+	cd ./build/; zip -r AtlassianASAPTokenDynamicValue.zip "$(identifier)/"

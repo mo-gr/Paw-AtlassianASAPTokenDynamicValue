@@ -1,9 +1,9 @@
 {
-  "name": "Paw-JsonWebTokenDynamicValue",
+  "name": "Paw-AtlassianASAPTokenDynamicValue",
   "version": "0.0.0",
-  "main": "src/JsonWebTokenDynamicValue.js",
+  "main": "src/AtlassianASAPTokenDynamicValue.js",
   "license": "MIT",
-  "homepage": "https://github.com/luckymarmot/Paw-JsonWebTokenDynamicValue",
+  "homepage": "https://github.com/mo-gr/Paw-JsonWebTokenDynamicValue",
   "dependencies": {
     "babel-plugin-transform-flow-strip-types": "6.22.0",
     "babel-polyfill": "6.23.0",
@@ -32,6 +32,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:luckymarmot/Paw-JsonWebTokenDynamicValue.git"
+    "url": "git@github.com:mo-gr/Paw-JsonWebTokenDynamicValue.git"
   }
 }
