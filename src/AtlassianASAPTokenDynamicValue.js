@@ -10,6 +10,7 @@ class AtlassianASAPTokenDynamicValue {
     InputField('sub', 'Subject (sub)', 'String'),
     InputField('aud', 'Audience (aud)', 'String'),
     InputField('kid', 'Key ID (kid)', 'String'),
+    InputField('claims', 'Additional Claims', 'JSON'),
     InputField('signatureSecret', 'Private Key', 'SecureValue')
   ];
 
@@ -34,10 +35,11 @@ class AtlassianASAPTokenDynamicValue {
       exp: now + 60,
       iss: this.iss,
       aud: this.aud,
-      sub: this.sub
+      sub: this.sub,
+      ...this.claims
     }
 
-    const secret = this.signatureSecret
+    const secret = this.signatureSecret;
 
     if (!secret || secret.length < 1) {
       return 'no key provided';
@@ -45,10 +47,10 @@ class AtlassianASAPTokenDynamicValue {
     if (secret ===  '***** Hidden credentials *****') {
       return 'Bearer ' + secret;
     }
-    console.log(`Sign JWT: Header: ${JSON.stringify(header)} Payload: ${JSON.stringify(payload)} Secret: ${JSON.stringify(secret)}`)
+    //console.log(`Sign JWT: Header: ${JSON.stringify(header)} Payload: ${JSON.stringify(payload)} Secret: ${JSON.stringify(jsrsasign.KEYUTIL.getKey(secret))}`)
 
     try {
-      return 'Bearer ' + jsrsasign.jws.JWS.sign(null, header, payload, secret);
+      return 'Bearer ' + jsrsasign.jws.JWS.sign(null, header, payload, jsrsasign.KEYUTIL.getKey(secret));
     } catch(e) {
       console.log("Error signing key: ", e)
       return '';
