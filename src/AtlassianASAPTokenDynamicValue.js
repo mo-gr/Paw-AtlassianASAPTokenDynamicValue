@@ -6,6 +6,7 @@ class AtlassianASAPTokenDynamicValue {
   static title = 'Atlassian ASAP Token (JWT)';
   static help = 'https://github.com/mo-gr/Paw-AtlassianASAPTokenDynamicValue';
   static inputs = [
+    InputField('bearer', 'Include Bearer?', 'Checkbox'),
     InputField('iss', 'Issuer (iss)', 'String'),
     InputField('sub', 'Subject (sub)', 'String'),
     InputField('aud', 'Audience (aud)', 'String'),
@@ -50,7 +51,7 @@ class AtlassianASAPTokenDynamicValue {
     //console.log(`Sign JWT: Header: ${JSON.stringify(header)} Payload: ${JSON.stringify(payload)} Secret: ${JSON.stringify(jsrsasign.KEYUTIL.getKey(secret))}`)
 
     try {
-      return 'Bearer ' + jsrsasign.jws.JWS.sign(null, header, payload, jsrsasign.KEYUTIL.getKey(secret));
+      return (this.bearer ? 'Bearer ' : '') + jsrsasign.jws.JWS.sign(null, header, payload, jsrsasign.KEYUTIL.getKey(secret));
     } catch(e) {
       console.log("Error signing key: ", e)
       return '';
